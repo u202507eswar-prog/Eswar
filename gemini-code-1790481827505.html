@@ -1,0 +1,2482 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>[ESWAR KUMAR] | Data Analyst & Power BI Developer</title>
+
+<meta name="description"
+content="Data Analyst and Power BI Developer specializing in dashboards, data analytics, SQL, Excel, Python automation and business intelligence.">
+
+<!-- Google Font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+:root{
+    --navy:#0B1F3A;
+    --navy-dark:#071426;
+    --navy-light:#12345B;
+    --orange:#F97316;
+
+    --white:#ffffff;
+    --light:#f6f8fb;
+    --gray:#64748b;
+    --border:#e5eaf0;
+
+    --shadow:0 15px 40px rgba(11,31,58,.10);
+
+    --transition:.35s ease;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:var(--white);
+    color:var(--navy);
+    line-height:1.6;
+    overflow-x:hidden;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+button{
+    font-family:inherit;
+}
+
+.container{
+    width:min(1180px,92%);
+    margin:auto;
+}
+
+section{
+    padding:100px 0;
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+/* =========================================================
+   SCROLL PROGRESS
+========================================================= */
+
+#progress{
+    position:fixed;
+    top:0;
+    left:0;
+    height:3px;
+    width:0%;
+    background:var(--orange);
+    z-index:9999;
+}
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+header{
+    position:fixed;
+    width:100%;
+    top:0;
+    z-index:1000;
+    transition:.4s ease;
+}
+
+header.scrolled{
+    background:rgba(255,255,255,.96);
+    backdrop-filter:blur(12px);
+    box-shadow:0 5px 25px rgba(11,31,58,.08);
+}
+
+.navbar{
+    height:78px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    font-family:'Manrope';
+    font-size:22px;
+    font-weight:800;
+    letter-spacing:-1px;
+}
+
+.logo span{
+    color:var(--orange);
+}
+
+.nav-links{
+    display:flex;
+    gap:30px;
+    align-items:center;
+}
+
+.nav-links a{
+    font-size:14px;
+    font-weight:600;
+    position:relative;
+}
+
+.nav-links a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-7px;
+    width:0;
+    height:2px;
+    background:var(--orange);
+    transition:.3s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after{
+    width:100%;
+}
+
+.nav-links a:hover{
+    color:var(--orange);
+}
+
+.nav-btn{
+    background:var(--navy);
+    color:white;
+    padding:11px 20px;
+    border-radius:8px;
+    transition:var(--transition);
+}
+
+.nav-btn:hover{
+    background:var(--orange);
+    transform:translateY(-3px);
+}
+
+.menu-btn{
+    display:none;
+    font-size:23px;
+    cursor:pointer;
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    padding-top:120px;
+    background:
+        radial-gradient(circle at 80% 30%,rgba(18,52,91,.08),transparent 30%),
+        linear-gradient(180deg,#fff,#f7f9fc);
+    position:relative;
+    overflow:hidden;
+}
+
+.hero-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:70px;
+    align-items:center;
+}
+
+.badge{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:8px 13px;
+    border:1px solid var(--border);
+    border-radius:30px;
+    font-size:12px;
+    font-weight:700;
+    color:var(--navy);
+    background:white;
+    box-shadow:0 8px 25px rgba(11,31,58,.05);
+    animation:fadeUp .8s ease both;
+}
+
+.badge i{
+    color:var(--orange);
+}
+
+.hero h1{
+    font-family:'Manrope';
+    font-size:clamp(44px,6vw,72px);
+    line-height:1.04;
+    letter-spacing:-3px;
+    margin:25px 0;
+    animation:fadeUp .8s .15s ease both;
+}
+
+.hero h1 span{
+    color:var(--orange);
+}
+
+.hero-description{
+    color:var(--gray);
+    max-width:580px;
+    font-size:17px;
+    animation:fadeUp .8s .3s ease both;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:15px;
+    margin-top:32px;
+    animation:fadeUp .8s .45s ease both;
+}
+
+.btn{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    padding:14px 23px;
+    border-radius:8px;
+    font-weight:700;
+    font-size:14px;
+    transition:var(--transition);
+    border:1px solid transparent;
+}
+
+.btn-primary{
+    background:var(--navy);
+    color:white;
+}
+
+.btn-primary:hover{
+    background:var(--orange);
+    transform:translateY(-4px);
+    box-shadow:0 12px 25px rgba(249,115,22,.25);
+}
+
+.btn-secondary{
+    border-color:var(--navy);
+}
+
+.btn-secondary:hover{
+    background:var(--navy);
+    color:white;
+    transform:translateY(-4px);
+}
+
+/* =========================================================
+   HERO DASHBOARD
+========================================================= */
+
+.dashboard-wrapper{
+    position:relative;
+    animation:float 5s ease-in-out infinite;
+}
+
+.dashboard{
+    background:white;
+    border:1px solid var(--border);
+    border-radius:18px;
+    box-shadow:0 30px 80px rgba(11,31,58,.15);
+    padding:22px;
+    position:relative;
+    overflow:hidden;
+}
+
+.dashboard::before{
+    content:"";
+    position:absolute;
+    width:250px;
+    height:250px;
+    background:rgba(249,115,22,.07);
+    border-radius:50%;
+    right:-100px;
+    top:-100px;
+}
+
+.dashboard-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:20px;
+}
+
+.dashboard-title{
+    font-weight:800;
+}
+
+.dashboard-menu{
+    color:#94a3b8;
+}
+
+.kpi-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:12px;
+}
+
+.kpi{
+    padding:15px;
+    border-radius:10px;
+    background:#f7f9fc;
+    transition:.3s ease;
+}
+
+.kpi:hover{
+    transform:translateY(-5px);
+    box-shadow:var(--shadow);
+}
+
+.kpi small{
+    color:var(--gray);
+    font-size:10px;
+}
+
+.kpi strong{
+    display:block;
+    font-size:20px;
+    margin-top:4px;
+}
+
+.kpi span{
+    font-size:10px;
+    color:#16a34a;
+}
+
+.chart{
+    height:230px;
+    margin-top:18px;
+    border-radius:12px;
+    background:#f8fafc;
+    position:relative;
+    overflow:hidden;
+}
+
+.chart-grid{
+    position:absolute;
+    inset:0;
+    background:
+        linear-gradient(#e8edf3 1px,transparent 1px),
+        linear-gradient(90deg,#e8edf3 1px,transparent 1px);
+    background-size:40px 40px;
+}
+
+.chart svg{
+    position:absolute;
+    width:100%;
+    height:100%;
+    padding:20px;
+}
+
+.chart-line{
+    fill:none;
+    stroke:var(--orange);
+    stroke-width:4;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+    stroke-dasharray:700;
+    stroke-dashoffset:700;
+    animation:drawChart 3s 1s ease forwards;
+}
+
+.floating-icon{
+    position:absolute;
+    width:48px;
+    height:48px;
+    border-radius:12px;
+    background:var(--navy);
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 15px 30px rgba(11,31,58,.2);
+    animation:floatIcon 4s ease-in-out infinite;
+}
+
+.icon-one{
+    top:-25px;
+    right:20px;
+}
+
+.icon-two{
+    bottom:40px;
+    left:-25px;
+    animation-delay:1s;
+}
+
+.icon-three{
+    bottom:-20px;
+    right:80px;
+    animation-delay:2s;
+    background:var(--orange);
+}
+
+/* =========================================================
+   SECTION TITLES
+========================================================= */
+
+.section-label{
+    color:var(--orange);
+    font-size:12px;
+    font-weight:800;
+    letter-spacing:2px;
+    text-transform:uppercase;
+}
+
+.section-title{
+    font-family:'Manrope';
+    font-size:clamp(34px,4vw,48px);
+    letter-spacing:-2px;
+    line-height:1.1;
+    margin-top:12px;
+}
+
+.section-description{
+    color:var(--gray);
+    max-width:600px;
+    margin-top:15px;
+}
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.about{
+    background:var(--white);
+}
+
+.about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:70px;
+    align-items:center;
+}
+
+.about-text p{
+    color:var(--gray);
+    margin-top:20px;
+}
+
+.about-cards{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+}
+
+.info-card{
+    padding:28px;
+    border:1px solid var(--border);
+    border-radius:15px;
+    transition:var(--transition);
+    background:white;
+}
+
+.info-card:hover{
+    transform:translateY(-8px);
+    border-color:var(--orange);
+    box-shadow:var(--shadow);
+}
+
+.info-card i{
+    font-size:25px;
+    color:var(--orange);
+    margin-bottom:15px;
+    transition:.3s ease;
+}
+
+.info-card:hover i{
+    transform:scale(1.2) rotate(5deg);
+}
+
+.info-card h3{
+    font-size:17px;
+}
+
+.info-card p{
+    font-size:13px;
+    margin-top:7px;
+    color:var(--gray);
+}
+
+/* =========================================================
+   SERVICES
+========================================================= */
+
+.services{
+    background:var(--light);
+}
+
+.services-grid{
+    margin-top:45px;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.service-card{
+    background:white;
+    padding:32px;
+    border-radius:16px;
+    border:1px solid var(--border);
+    transition:var(--transition);
+    position:relative;
+    overflow:hidden;
+}
+
+.service-card::before{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:0;
+    width:0;
+    height:3px;
+    background:var(--orange);
+    transition:.4s ease;
+}
+
+.service-card:hover::before{
+    width:100%;
+}
+
+.service-card:hover{
+    transform:translateY(-9px);
+    box-shadow:var(--shadow);
+}
+
+.service-icon{
+    width:52px;
+    height:52px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:var(--navy);
+    color:white;
+    border-radius:12px;
+    margin-bottom:22px;
+    transition:.35s ease;
+}
+
+.service-card:hover .service-icon{
+    background:var(--orange);
+    transform:scale(1.1) rotate(-4deg);
+}
+
+.service-card h3{
+    font-size:18px;
+}
+
+.service-card p{
+    margin-top:10px;
+    color:var(--gray);
+    font-size:14px;
+}
+
+/* =========================================================
+   PROJECTS
+========================================================= */
+
+.projects{
+    background:white;
+}
+
+.filters{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin:35px 0;
+}
+
+.filter{
+    border:1px solid var(--border);
+    background:white;
+    color:var(--navy);
+    padding:9px 16px;
+    border-radius:30px;
+    cursor:pointer;
+    font-size:13px;
+    font-weight:600;
+    transition:.3s ease;
+}
+
+.filter:hover,
+.filter.active{
+    background:var(--navy);
+    color:white;
+    border-color:var(--navy);
+    transform:translateY(-2px);
+}
+
+.projects-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+}
+
+.project-card{
+    border:1px solid var(--border);
+    border-radius:16px;
+    overflow:hidden;
+    background:white;
+    transition:.4s ease;
+}
+
+.project-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 25px 60px rgba(11,31,58,.13);
+}
+
+.project-image{
+    height:210px;
+    background:
+        linear-gradient(135deg,#0B1F3A,#12345B);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+    overflow:hidden;
+}
+
+.project-image i{
+    font-size:55px;
+    color:white;
+    opacity:.9;
+    transition:.5s ease;
+}
+
+.project-card:hover .project-image i{
+    transform:scale(1.2) rotate(5deg);
+}
+
+.project-overlay{
+    position:absolute;
+    inset:0;
+    background:rgba(11,31,58,.82);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    opacity:0;
+    transition:.35s ease;
+}
+
+.project-card:hover .project-overlay{
+    opacity:1;
+}
+
+.view-project{
+    color:white;
+    border:1px solid rgba(255,255,255,.5);
+    padding:10px 17px;
+    border-radius:7px;
+    font-size:13px;
+}
+
+.project-content{
+    padding:22px;
+}
+
+.project-category{
+    font-size:11px;
+    font-weight:800;
+    color:var(--orange);
+    text-transform:uppercase;
+    letter-spacing:1px;
+}
+
+.project-content h3{
+    margin:7px 0;
+    font-size:19px;
+}
+
+.project-content p{
+    color:var(--gray);
+    font-size:13px;
+}
+
+.tech-tags{
+    display:flex;
+    gap:7px;
+    flex-wrap:wrap;
+    margin-top:15px;
+}
+
+.tech{
+    font-size:10px;
+    padding:5px 8px;
+    border-radius:5px;
+    background:#f1f5f9;
+}
+
+/* =========================================================
+   SKILLS
+========================================================= */
+
+.skills{
+    background:var(--navy);
+    color:white;
+}
+
+.skills .section-description{
+    color:#b7c2d0;
+}
+
+.skill-groups{
+    margin-top:45px;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+}
+
+.skill-group{
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:15px;
+    padding:25px;
+    transition:.35s ease;
+}
+
+.skill-group:hover{
+    background:rgba(255,255,255,.05);
+    transform:translateY(-7px);
+    border-color:var(--orange);
+}
+
+.skill-group h3{
+    font-size:16px;
+    margin-bottom:18px;
+}
+
+.skill{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding:10px 0;
+    border-bottom:1px solid rgba(255,255,255,.07);
+    color:#d9e0e8;
+    font-size:13px;
+}
+
+.skill i{
+    color:var(--orange);
+}
+
+/* =========================================================
+   PROCESS
+========================================================= */
+
+.process{
+    background:var(--light);
+}
+
+.process-grid{
+    margin-top:55px;
+    display:grid;
+    grid-template-columns:repeat(7,1fr);
+    gap:10px;
+}
+
+.process-step{
+    text-align:center;
+    position:relative;
+}
+
+.process-number{
+    width:55px;
+    height:55px;
+    border-radius:50%;
+    background:var(--navy);
+    color:white;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:800;
+    transition:.35s ease;
+    position:relative;
+    z-index:2;
+}
+
+.process-step:hover .process-number{
+    background:var(--orange);
+    transform:scale(1.15);
+}
+
+.process-step h3{
+    font-size:14px;
+    margin-top:15px;
+}
+
+.process-step p{
+    color:var(--gray);
+    font-size:11px;
+    margin-top:6px;
+}
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.cta{
+    background:var(--navy);
+    color:white;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+}
+
+.cta::before,
+.cta::after{
+    content:"";
+    position:absolute;
+    width:350px;
+    height:350px;
+    border-radius:50%;
+    border:1px solid rgba(255,255,255,.08);
+}
+
+.cta::before{
+    left:-150px;
+    top:-150px;
+}
+
+.cta::after{
+    right:-150px;
+    bottom:-150px;
+}
+
+.cta .section-title{
+    max-width:700px;
+    margin:15px auto;
+}
+
+.cta p{
+    color:#bdc8d6;
+    max-width:600px;
+    margin:0 auto 30px;
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+    background:var(--navy-dark);
+    color:white;
+    padding:55px 0 25px;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr;
+    gap:50px;
+}
+
+.footer-brand p{
+    color:#9ba9b9;
+    margin-top:15px;
+    max-width:400px;
+    font-size:14px;
+}
+
+.footer-title{
+    font-size:14px;
+    margin-bottom:18px;
+}
+
+.footer-links{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.footer-links a{
+    color:#9ba9b9;
+    font-size:13px;
+    transition:.3s ease;
+}
+
+.footer-links a:hover{
+    color:var(--orange);
+    transform:translateX(5px);
+}
+
+.socials{
+    display:flex;
+    gap:10px;
+}
+
+.social{
+    width:40px;
+    height:40px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:8px;
+    transition:.3s ease;
+}
+
+.social:hover{
+    background:var(--orange);
+    border-color:var(--orange);
+    transform:translateY(-4px);
+}
+
+.copyright{
+    border-top:1px solid rgba(255,255,255,.08);
+    margin-top:40px;
+    padding-top:20px;
+    text-align:center;
+    color:#718096;
+    font-size:12px;
+}
+
+/* =========================================================
+   SCROLL TOP
+========================================================= */
+
+#topBtn{
+    position:fixed;
+    bottom:25px;
+    right:25px;
+    width:45px;
+    height:45px;
+    border:0;
+    border-radius:10px;
+    background:var(--navy);
+    color:white;
+    cursor:pointer;
+    opacity:0;
+    visibility:hidden;
+    transition:.3s ease;
+    z-index:900;
+}
+
+#topBtn.show{
+    opacity:1;
+    visibility:visible;
+}
+
+#topBtn:hover{
+    background:var(--orange);
+    transform:translateY(-4px);
+}
+
+/* =========================================================
+   REVEAL ANIMATION
+========================================================= */
+
+.reveal{
+    opacity:0;
+    transform:translateY(35px);
+    transition:opacity .8s ease,transform .8s ease;
+}
+
+.reveal.active{
+    opacity:1;
+    transform:translateY(0);
+}
+
+.delay-1{
+    transition-delay:.1s;
+}
+
+.delay-2{
+    transition-delay:.2s;
+}
+
+.delay-3{
+    transition-delay:.3s;
+}
+
+/* =========================================================
+   KEYFRAMES
+========================================================= */
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(25px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes float{
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-12px);
+    }
+}
+
+@keyframes floatIcon{
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-12px);
+    }
+}
+
+@keyframes drawChart{
+    to{
+        stroke-dashoffset:0;
+    }
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:1000px){
+
+    .hero-grid{
+        grid-template-columns:1fr;
+    }
+
+    .dashboard-wrapper{
+        max-width:650px;
+        margin:auto;
+    }
+
+    .services-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .projects-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .skill-groups{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .process-grid{
+        grid-template-columns:repeat(4,1fr);
+        gap:30px;
+    }
+}
+
+@media(max-width:700px){
+
+    section{
+        padding:75px 0;
+    }
+
+    .nav-links{
+        position:absolute;
+        top:78px;
+        left:0;
+        width:100%;
+        background:white;
+        flex-direction:column;
+        align-items:flex-start;
+        padding:25px 5%;
+        gap:20px;
+        box-shadow:0 15px 30px rgba(11,31,58,.08);
+        opacity:0;
+        pointer-events:none;
+        transform:translateY(-10px);
+        transition:.3s ease;
+    }
+
+    .nav-links.open{
+        opacity:1;
+        pointer-events:auto;
+        transform:translateY(0);
+    }
+
+    .nav-btn{
+        display:none;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+    .hero{
+        padding-top:120px;
+    }
+
+    .hero h1{
+        font-size:45px;
+        letter-spacing:-2px;
+    }
+
+    .hero-buttons{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .about-grid{
+        grid-template-columns:1fr;
+    }
+
+    .about-cards{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .services-grid,
+    .projects-grid{
+        grid-template-columns:1fr;
+    }
+
+    .skill-groups{
+        grid-template-columns:1fr;
+    }
+
+    .process-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr;
+        gap:30px;
+    }
+
+    .kpi-grid{
+        grid-template-columns:1fr;
+    }
+
+    .floating-icon{
+        display:none;
+    }
+}
+
+@media(max-width:450px){
+
+    .about-cards{
+        grid-template-columns:1fr;
+    }
+
+    .process-grid{
+        grid-template-columns:1fr;
+    }
+
+    .hero h1{
+        font-size:39px;
+    }
+
+    .dashboard{
+        padding:15px;
+    }
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media(prefers-reduced-motion:reduce){
+
+    *,
+    *::before,
+    *::after{
+        animation-duration:.01ms!important;
+        animation-iteration-count:1!important;
+        scroll-behavior:auto!important;
+        transition-duration:.01ms!important;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- SCROLL PROGRESS -->
+<div id="progress"></div>
+
+<!-- =======================================================
+     NAVIGATION
+======================================================= -->
+
+<header id="header">
+
+<div class="container navbar">
+
+<a href="#home" class="logo">
+    [ESWAR<span>KUMAR</span>]
+</a>
+
+<nav class="nav-links" id="navLinks">
+
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#services">Services</a>
+<a href="#projects">Projects</a>
+<a href="#skills">Skills</a>
+<a href="#process">Process</a>
+<a href="#contact">Contact</a>
+
+</nav>
+
+<a href="#contact" class="nav-btn">
+    Let's Talk
+</a>
+
+<div class="menu-btn" id="menuBtn">
+    <i class="fa-solid fa-bars"></i>
+</div>
+
+</div>
+
+</header>
+
+
+<!-- =======================================================
+     HERO
+======================================================= -->
+
+<section class="hero" id="home">
+
+<div class="container hero-grid">
+
+<div>
+
+<div class="badge">
+    <i class="fa-solid fa-chart-line"></i>
+    DATA ANALYST • POWER BI DEVELOPER
+</div>
+
+<h1>
+Turning Raw Data
+Into <span>Meaningful Insights.</span>
+</h1>
+
+<p class="hero-description">
+I transform raw business data into interactive dashboards,
+automated reports, and actionable business insights using
+Power BI, SQL, Excel, Python and automation tools.
+</p>
+
+<div class="hero-buttons">
+
+<a href="#projects" class="btn btn-primary">
+    View My Projects
+    <i class="fa-solid fa-arrow-right"></i>
+</a>
+
+<a href="#contact" class="btn btn-secondary">
+    Let's Work Together
+</a>
+
+</div>
+
+</div>
+
+
+<!-- DASHBOARD VISUAL -->
+
+<div class="dashboard-wrapper">
+
+<div class="floating-icon icon-one">
+    <i class="fa-solid fa-chart-pie"></i>
+</div>
+
+<div class="floating-icon icon-two">
+    <i class="fa-solid fa-database"></i>
+</div>
+
+<div class="floating-icon icon-three">
+    <i class="fa-solid fa-bolt"></i>
+</div>
+
+
+<div class="dashboard">
+
+<div class="dashboard-top">
+
+<div class="dashboard-title">
+    Business Analytics
+</div>
+
+<div class="dashboard-menu">
+    <i class="fa-solid fa-ellipsis"></i>
+</div>
+
+</div>
+
+
+<div class="kpi-grid">
+
+<div class="kpi">
+    <small>Revenue</small>
+    <strong>₹12.4M</strong>
+    <span>+18.4%</span>
+</div>
+
+<div class="kpi">
+    <small>Orders</small>
+    <strong>8,420</strong>
+    <span>+12.8%</span>
+</div>
+
+<div class="kpi">
+    <small>Growth</small>
+    <strong>24.6%</strong>
+    <span>+5.2%</span>
+</div>
+
+</div>
+
+
+<div class="chart">
+
+<div class="chart-grid"></div>
+
+<svg viewBox="0 0 500 220">
+
+<polyline
+class="chart-line"
+points="
+20,175
+70,160
+110,170
+150,130
+190,145
+230,105
+270,120
+310,80
+350,95
+390,60
+440,75
+480,35
+"/>
+
+</svg>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =======================================================
+     ABOUT
+======================================================= -->
+
+<section class="about" id="about">
+
+<div class="container about-grid">
+
+<div class="about-text reveal">
+
+<span class="section-label">
+    About Me
+</span>
+
+<h2 class="section-title">
+    Data-focused thinking with a business perspective.
+</h2>
+
+<p>
+I work with business data to create dashboards, reports,
+automations and analytics solutions that help transform
+raw information into meaningful insights.
+</p>
+
+<p>
+My approach combines data preparation, analysis,
+visualization and automation to build practical reporting
+solutions for business teams.
+</p>
+
+</div>
+
+
+<div class="about-cards">
+
+<div class="info-card reveal delay-1">
+<i class="fa-solid fa-chart-column"></i>
+<h3>Business Intelligence</h3>
+<p>Interactive dashboards and business reporting.</p>
+</div>
+
+<div class="info-card reveal delay-2">
+<i class="fa-solid fa-gears"></i>
+<h3>Automation</h3>
+<p>Reduce repetitive reporting and data tasks.</p>
+</div>
+
+<div class="info-card reveal delay-1">
+<i class="fa-solid fa-database"></i>
+<h3>Data Transformation</h3>
+<p>Clean, structure and prepare business data.</p>
+</div>
+
+<div class="info-card reveal delay-2">
+<i class="fa-solid fa-chart-line"></i>
+<h3>KPI Reporting</h3>
+<p>Convert business metrics into useful insights.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =======================================================
+     SERVICES
+======================================================= -->
+
+<section class="services" id="services">
+
+<div class="container">
+
+<span class="section-label reveal">
+    What I Do
+</span>
+
+<h2 class="section-title reveal">
+    Analytics & Data Services
+</h2>
+
+<p class="section-description reveal">
+Custom data solutions designed to turn business information
+into clear reports, dashboards and actionable insights.
+</p>
+
+
+<div class="services-grid">
+
+<div class="service-card reveal">
+<div class="service-icon">
+<i class="fa-solid fa-chart-column"></i>
+</div>
+<h3>Power BI Dashboard Development</h3>
+<p>
+Interactive dashboards, KPI reporting and business intelligence solutions.
+</p>
+</div>
+
+
+<div class="service-card reveal delay-1">
+<div class="service-icon">
+<i class="fa-solid fa-file-excel"></i>
+</div>
+<h3>Excel Dashboard Development</h3>
+<p>
+Dynamic Excel dashboards, reporting templates and data analysis.
+</p>
+</div>
+
+
+<div class="service-card reveal delay-2">
+<div class="service-icon">
+<i class="fa-solid fa-database"></i>
+</div>
+<h3>SQL Data Analysis</h3>
+<p>
+Data extraction, transformation, querying and analytical reporting.
+</p>
+</div>
+
+
+<div class="service-card reveal">
+<div class="service-icon">
+<i class="fa-brands fa-python"></i>
+</div>
+<h3>Python Automation</h3>
+<p>
+Automate repetitive data extraction, processing and reporting tasks.
+</p>
+</div>
+
+
+<div class="service-card reveal delay-1">
+<div class="service-icon">
+<i class="fa-solid fa-table"></i>
+</div>
+<h3>Google Sheets & Apps Script</h3>
+<p>
+Automated workflows, reporting systems and spreadsheet solutions.
+</p>
+</div>
+
+
+<div class="service-card reveal delay-2">
+<div class="service-icon">
+<i class="fa-solid fa-chart-pie"></i>
+</div>
+<h3>KPI & Business Reporting</h3>
+<p>
+Meaningful KPI reports that help teams monitor business performance.
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =======================================================
+     PROJECTS
+======================================================= -->
+
+<section class="projects" id="projects">
+
+<div class="container">
+
+<span class="section-label reveal">
+    Portfolio
+</span>
+
+<h2 class="section-title reveal">
+    Featured Projects
+</h2>
+
+<p class="section-description reveal">
+A selection of dashboards, automation solutions and
+data analytics projects.
+</p>
+
+
+<div class="filters reveal">
+
+<button class="filter active" data-filter="all">
+All
+</button>
+
+<button class="filter" data-filter="Power BI">
+Power BI
+</button>
+
+<button class="filter" data-filter="Excel">
+Excel
+</button>
+
+<button class="filter" data-filter="SQL">
+SQL
+</button>
+
+<button class="filter" data-filter="Python">
+Python
+</button>
+
+<button class="filter" data-filter="Automation">
+Automation
+</button>
+
+</div>
+
+
+<div class="projects-grid" id="projectGrid">
+
+<!-- PROJECT 1 -->
+
+<div class="project-card reveal"
+data-category="Power BI">
+
+<div class="project-image">
+
+<i class="fa-solid fa-chart-column"></i>
+
+<div class="project-overlay">
+<a href="#" class="view-project">
+View Project →
+</a>
+</div>
+
+</div>
+
+<div class="project-content">
+
+<div class="project-category">
+Power BI
+</div>
+
+<h3>
+Sales Performance Dashboard
+</h3>
+
+<p>
+Interactive dashboard for monitoring sales KPIs and business performance.
+</p>
+
+<div class="tech-tags">
+<span class="tech">Power BI</span>
+<span class="tech">SQL</span>
+<span class="tech">Excel</span>
+</div>
+
+</div>
+
+</div>
+
+
+<!-- PROJECT 2 -->
+
+<div class="project-card reveal delay-1"
+data-category="Excel">
+
+<div class="project-image">
+
+<i class="fa-solid fa-file-excel"></i>
+
+<div class="project-overlay">
+<a href="#" class="view-project">
+View Project →
+</a>
+</div>
+
+</div>
+
+<div class="project-content">
+
+<div class="project-category">
+Excel
+</div>
+
+<h3>
+Management Reporting Dashboard
+</h3>
+
+<p>
+Interactive Excel reporting solution with KPI tracking and automated calculations.
+</p>
+
+<div class="tech-tags">
+<span class="tech">Excel</span>
+<span class="tech">Power Query</span>
+</div>
+
+</div>
+
+</div>
+
+
+<!-- PROJECT 3 -->
+
+<div class="project-card reveal delay-2"
+data-category="SQL">
+
+<div class="project-image">
+
+<i class="fa-solid fa-database"></i>
+
+<div class="project-overlay">
+<a href="#" class="view-project">
+View Project →
+</a>
+</div>
+
+</div>
+
+<div class="project-content">
+
+<div class="project-category">
+SQL
+</div>
+
+<h3>
+Business Data Analysis
+</h3>
+
+<p>
+Structured SQL analysis for extracting business insights from operational data.
+</p>
+
+<div class="tech-tags">
+<span class="tech">SQL</span>
+<span class="tech">Power BI</span>
+</div>
+
+</div>
+
+</div>
+
+
+<!-- PROJECT 4 -->
+
+<div class="project-card reveal"
+data-category="Python">
+
+<div class="project-image">
+
+<i class="fa-brands fa-python"></i>
+
+<div class="project-overlay">
+<a href="#" class="view-project">
+View Project →
+</a>
+</div>
+
+</div>
+
+<div class="project-content">
+
+<div class="project-category">
+Python
+</div>
+
+<h3>
+Data Automation System
+</h3>
+
+<p>
+Python-based workflow for automating repetitive data processing tasks.
+</p>
+
+<div class="tech-tags">
+<span class="tech">Python</span>
+<span class="tech">Pandas</span>
+</div>
+
+</div>
+
+</div>
+
+
+<!-- PROJECT 5 -->
+
+<div class="project-card reveal delay-1"
+data-category="Automation">
+
+<div class="project-image">
+
+<i class="fa-solid fa-gears"></i>
+
+<div class="project-overlay">
+<a href="#" class="view-project">
+View Project →
+</a>
+</div>
+
+</div>
+
+<div class="project-content">
+
+<div class="project-category">
+Automation
+</div>
+
+<h3>
+Automated KPI Reporting
+</h3>
+
+<p>
+Automated reporting workflow for collecting and distributing KPI information.
+</p>
+
+<div class="tech-tags">
+<span class="tech">Apps Script</span>
+<span class="tech">Google Sheets</span>
+</div>
+
+</div>
+
+</div>
+
+
+<!-- PROJECT 6 -->
+
+<div class="project-card reveal delay-2"
+data-category="Power BI">
+
+<div class="project-image">
+
+<i class="fa-solid fa-chart-pie"></i>
+
+<div class="project-overlay">
+<a href="#" class="view-project">
+View Project →
+</a>
+</div>
+
+</div>
+
+<div class="project-content">
+
+<div class="project-category">
+Power BI
+</div>
+
+<h3>
+Operations KPI Dashboard
+</h3>
+
+<p>
+KPI-focused dashboard for monitoring operational performance.
+</p>
+
+<div class="tech-tags">
+<span class="tech">Power BI</span>
+<span class="tech">Power Query</span>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =======================================================
+     SKILLS
+======================================================= -->
+
+<section class="skills" id="skills">
+
+<div class="container">
+
+<span class="section-label">
+    Technology
+</span>
+
+<h2 class="section-title">
+    Tools & Skills
+</h2>
+
+<p class="section-description">
+Technologies I use to transform raw data into meaningful
+business information.
+</p>
+
+
+<div class="skill-groups">
+
+<div class="skill-group reveal">
+
+<h3>Business Intelligence</h3>
+
+<div class="skill">
+<i class="fa-solid fa-chart-column"></i>
+Power BI
+</div>
+
+<div class="skill">
+<i class="fa-solid fa-filter"></i>
+Power Query
+</div>
+
+<div class="skill">
+<i class="fa-solid fa-chart-line"></i>
+Dashboard Design
+</div>
+
+<div class="skill">
+<i class="fa-solid fa-bullseye"></i>
+KPI Reporting
+</div>
+
+</div>
+
+
+<div class="skill-group reveal delay-1">
+
+<h3>Data</h3>
+
+<div class="skill">
+<i class="fa-solid fa-database"></i>
+SQL
+</div>
+
+<div class="skill">
+<i class="fa-solid fa-file-excel"></i>
+Excel
+</div>
+
+<div class="skill">
+<i class="fa-solid fa-table"></i>
+Google Sheets
+</div>
+
+<div class="skill">
+<i class="fa-solid fa-broom"></i>
+Data Cleaning
+</div>
+
+</div>
+
+
+<div class="skill-group reveal delay-2">
+
+<h3>Programming</h3>
+
+<div class="skill">
+<i class="fa-brands fa-python"></i>
+Python
+</div>
+
+<div class="skill">
+<i class="fa-solid fa-code"></i>
+Apps Script
+</div>
+
+<div class="skill">
+<i class="fa-solid fa-gears"></i>
+Automation
+</div>
+
+<div class="skill">
+<i class="fa-solid fa-download"></i>
+Data Extraction
+</div>
+
+</div>
+
+
+<div class="skill-group reveal delay-3">
+
+<h3>Reporting</h3>
+
+<div class="skill">
+<i class="fa-solid fa-file-lines"></i>
+MIS Reporting
+</div>
+
+<div class="skill">
+<i class="fa-solid fa-chart-simple"></i>
+Business Reporting
+</div>
+
+<div class="skill">
+<i class="fa-solid fa-magnifying-glass-chart"></i>
+Performance Analysis
+</div>
+
+<div class="skill">
+<i class="fa-solid fa-gauge-high"></i>
+Management Dashboards
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =======================================================
+     PROCESS
+======================================================= -->
+
+<section class="process" id="process">
+
+<div class="container">
+
+<span class="section-label reveal">
+    My Process
+</span>
+
+<h2 class="section-title reveal">
+    From Raw Data to Business Insight
+</h2>
+
+<p class="section-description reveal">
+A structured approach to turning business data into useful
+and actionable information.
+</p>
+
+
+<div class="process-grid">
+
+<div class="process-step reveal">
+<div class="process-number">01</div>
+<h3>Understand</h3>
+<p>Understand the business requirement.</p>
+</div>
+
+<div class="process-step reveal delay-1">
+<div class="process-number">02</div>
+<h3>Collect</h3>
+<p>Gather the required data.</p>
+</div>
+
+<div class="process-step reveal delay-2">
+<div class="process-number">03</div>
+<h3>Clean</h3>
+<p>Prepare and clean the data.</p>
+</div>
+
+<div class="process-step reveal delay-3">
+<div class="process-number">04</div>
+<h3>Analyze</h3>
+<p>Identify patterns and KPIs.</p>
+</div>
+
+<div class="process-step reveal">
+<div class="process-number">05</div>
+<h3>Visualize</h3>
+<p>Build meaningful dashboards.</p>
+</div>
+
+<div class="process-step reveal delay-1">
+<div class="process-number">06</div>
+<h3>Automate</h3>
+<p>Reduce repetitive reporting.</p>
+</div>
+
+<div class="process-step reveal delay-2">
+<div class="process-number">07</div>
+<h3>Deliver</h3>
+<p>Provide the final solution.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =======================================================
+     CONTACT CTA
+======================================================= -->
+
+<section class="cta" id="contact">
+
+<div class="container">
+
+<span class="section-label">
+    Let's Connect
+</span>
+
+<h2 class="section-title">
+    Have Data That Needs Better Insights?
+</h2>
+
+<p>
+Let's turn your business data into clear dashboards,
+reports and useful business insights.
+</p>
+
+<div class="hero-buttons" style="justify-content:center;">
+
+<a href="mailto:[YOUR EMAIL]" class="btn btn-primary">
+<i class="fa-solid fa-envelope"></i>
+Email Me
+</a>
+
+<a href="[YOUR LINKEDIN]" target="_blank" class="btn btn-secondary"
+style="border-color:white;color:white;">
+<i class="fa-brands fa-linkedin"></i>
+LinkedIn
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =======================================================
+     FOOTER
+======================================================= -->
+
+<footer>
+
+<div class="container">
+
+<div class="footer-grid">
+
+<div class="footer-brand">
+
+<div class="logo">
+[YOUR<span>NAME</span>]
+</div>
+
+<p>
+Data Analyst & Power BI Developer focused on dashboards,
+automation, reporting and business intelligence.
+</p>
+
+<div class="socials" style="margin-top:20px;">
+
+<a href="[YOUR LINKEDIN]" class="social" target="_blank">
+<i class="fa-brands fa-linkedin-in"></i>
+</a>
+
+<a href="[YOUR GITHUB]" class="social" target="_blank">
+<i class="fa-brands fa-github"></i>
+</a>
+
+<a href="mailto:[YOUR EMAIL]" class="social">
+<i class="fa-solid fa-envelope"></i>
+</a>
+
+<a href="https://wa.me/[YOUR NUMBER]" class="social" target="_blank">
+<i class="fa-brands fa-whatsapp"></i>
+</a>
+
+</div>
+
+</div>
+
+
+<div>
+
+<h3 class="footer-title">
+Navigation
+</h3>
+
+<div class="footer-links">
+
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#services">Services</a>
+<a href="#projects">Projects</a>
+<a href="#skills">Skills</a>
+<a href="#contact">Contact</a>
+
+</div>
+
+</div>
+
+
+<div>
+
+<h3 class="footer-title">
+Technologies
+</h3>
+
+<div class="footer-links">
+
+<a href="#skills">Power BI</a>
+<a href="#skills">SQL</a>
+<a href="#skills">Excel</a>
+<a href="#skills">Python</a>
+<a href="#skills">Power Query</a>
+<a href="#skills">Apps Script</a>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="copyright">
+
+© <span id="year"></span> [YOUR NAME].
+All rights reserved.
+
+</div>
+
+</div>
+
+</footer>
+
+
+<!-- SCROLL TOP -->
+
+<button id="topBtn">
+<i class="fa-solid fa-arrow-up"></i>
+</button>
+
+
+<!-- =======================================================
+     JAVASCRIPT
+======================================================= -->
+
+<script>
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+const menuBtn = document.getElementById("menuBtn");
+const navLinks = document.getElementById("navLinks");
+
+menuBtn.addEventListener("click", () => {
+
+    navLinks.classList.toggle("open");
+
+    const icon = menuBtn.querySelector("i");
+
+    if(navLinks.classList.contains("open")){
+        icon.classList.remove("fa-bars");
+        icon.classList.add("fa-xmark");
+    }else{
+        icon.classList.remove("fa-xmark");
+        icon.classList.add("fa-bars");
+    }
+
+});
+
+
+/* Close mobile menu */
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        navLinks.classList.remove("open");
+
+        const icon = menuBtn.querySelector("i");
+
+        icon.classList.remove("fa-xmark");
+        icon.classList.add("fa-bars");
+
+    });
+
+});
+
+
+/* =========================================================
+   NAVBAR SCROLL
+========================================================= */
+
+const header = document.getElementById("header");
+
+window.addEventListener("scroll", () => {
+
+    if(window.scrollY > 40){
+        header.classList.add("scrolled");
+    }else{
+        header.classList.remove("scrolled");
+    }
+
+});
+
+
+/* =========================================================
+   SCROLL PROGRESS
+========================================================= */
+
+window.addEventListener("scroll", () => {
+
+    const scrollTop = window.scrollY;
+
+    const documentHeight =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
+
+    const percentage =
+        (scrollTop / documentHeight) * 100;
+
+    document.getElementById("progress").style.width =
+        percentage + "%";
+
+});
+
+
+/* =========================================================
+   REVEAL ANIMATIONS
+========================================================= */
+
+const observer = new IntersectionObserver(
+    (entries) => {
+
+        entries.forEach(entry => {
+
+            if(entry.isIntersecting){
+
+                entry.target.classList.add("active");
+
+            }
+
+        });
+
+    },
+    {
+        threshold:0.12
+    }
+);
+
+
+document.querySelectorAll(".reveal").forEach(element => {
+
+    observer.observe(element);
+
+});
+
+
+/* =========================================================
+   PROJECT FILTER
+========================================================= */
+
+const filters =
+document.querySelectorAll(".filter");
+
+const projects =
+document.querySelectorAll(".project-card");
+
+
+filters.forEach(filter => {
+
+    filter.addEventListener("click", () => {
+
+        filters.forEach(button =>
+            button.classList.remove("active")
+        );
+
+        filter.classList.add("active");
+
+        const selected =
+            filter.getAttribute("data-filter");
+
+        projects.forEach(project => {
+
+            const category =
+                project.getAttribute("data-category");
+
+            if(
+                selected === "all" ||
+                category === selected
+            ){
+
+                project.style.display = "block";
+
+                setTimeout(() => {
+
+                    project.style.opacity = "1";
+                    project.style.transform = "translateY(0)";
+
+                },20);
+
+            }else{
+
+                project.style.opacity = "0";
+                project.style.transform = "translateY(15px)";
+
+                setTimeout(() => {
+
+                    project.style.display = "none";
+
+                },250);
+
+            }
+
+        });
+
+    });
+
+});
+
+
+/* =========================================================
+   SCROLL TO TOP
+========================================================= */
+
+const topBtn =
+document.getElementById("topBtn");
+
+window.addEventListener("scroll", () => {
+
+    if(window.scrollY > 500){
+
+        topBtn.classList.add("show");
+
+    }else{
+
+        topBtn.classList.remove("show");
+
+    }
+
+});
+
+
+topBtn.addEventListener("click", () => {
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+});
+
+
+/* =========================================================
+   CURRENT YEAR
+========================================================= */
+
+document.getElementById("year").textContent =
+new Date().getFullYear();
+
+
+/* =========================================================
+   ACTIVE NAVIGATION
+========================================================= */
+
+const sections =
+document.querySelectorAll("section");
+
+const navItems =
+document.querySelectorAll(".nav-links a");
+
+window.addEventListener("scroll", () => {
+
+    let current = "";
+
+    sections.forEach(section => {
+
+        const sectionTop =
+            section.offsetTop - 150;
+
+        if(window.scrollY >= sectionTop){
+
+            current =
+                section.getAttribute("id");
+
+        }
+
+    });
+
+
+    navItems.forEach(item => {
+
+        item.classList.remove("active");
+
+        if(
+            item.getAttribute("href") ===
+            "#" + current
+        ){
+
+            item.classList.add("active");
+
+        }
+
+    });
+
+});
+
+
+</script>
+
+</body>
+</html>
+```
