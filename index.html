@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +5,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>[ESWAR KUMAR] | Data Analyst & Power BI Developer</title>
+<title>Eswar Kumar | Data Analyst & Power BI Developer</title>
 
 <meta name="description"
 content="Data Analyst and Power BI Developer specializing in dashboards, data analytics, SQL, Excel, Python automation and business intelligence.">
@@ -659,15 +658,98 @@ header.scrolled{
     overflow:hidden;
 }
 
-.project-image i{
+.project-image i.project-icon{
     font-size:55px;
     color:white;
     opacity:.9;
     transition:.5s ease;
 }
 
-.project-card:hover .project-image i{
+.project-card:hover .project-image i.project-icon{
     transform:scale(1.2) rotate(5deg);
+}
+
+/* =========================================================
+   PDF PROJECT PREVIEW
+========================================================= */
+
+.pdf-preview{
+    height:210px;
+    width:100%;
+    position:relative;
+    overflow:hidden;
+    background:#eef2f7;
+}
+
+.pdf-preview iframe{
+    width:100%;
+    height:100%;
+    border:none;
+    display:block;
+    background:white;
+    pointer-events:none;
+}
+
+.pdf-preview::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+        135deg,
+        rgba(11,31,58,.05),
+        rgba(249,115,22,.05)
+    );
+    pointer-events:none;
+}
+
+.pdf-badge{
+    position:absolute;
+    top:12px;
+    left:12px;
+    z-index:3;
+    background:var(--orange);
+    color:white;
+    padding:6px 10px;
+    border-radius:6px;
+    font-size:10px;
+    font-weight:800;
+    letter-spacing:.5px;
+    box-shadow:0 5px 15px rgba(249,115,22,.3);
+}
+
+.pdf-overlay{
+    position:absolute;
+    inset:0;
+    background:rgba(11,31,58,.84);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    opacity:0;
+    transition:.35s ease;
+    z-index:4;
+}
+
+.project-card:hover .pdf-overlay{
+    opacity:1;
+}
+
+.pdf-view-btn{
+    color:white;
+    border:1px solid rgba(255,255,255,.6);
+    padding:11px 18px;
+    border-radius:8px;
+    font-size:13px;
+    font-weight:700;
+    transition:.3s ease;
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+}
+
+.pdf-view-btn:hover{
+    background:var(--orange);
+    border-color:var(--orange);
+    transform:translateY(-3px);
 }
 
 .project-overlay{
@@ -691,6 +773,12 @@ header.scrolled{
     padding:10px 17px;
     border-radius:7px;
     font-size:13px;
+    transition:.3s ease;
+}
+
+.view-project:hover{
+    background:var(--orange);
+    border-color:var(--orange);
 }
 
 .project-content{
@@ -1019,6 +1107,7 @@ footer{
         opacity:0;
         transform:translateY(25px);
     }
+
     to{
         opacity:1;
         transform:translateY(0);
@@ -1168,6 +1257,10 @@ footer{
     .floating-icon{
         display:none;
     }
+
+    .pdf-preview{
+        height:260px;
+    }
 }
 
 @media(max-width:450px){
@@ -1186,6 +1279,10 @@ footer{
 
     .dashboard{
         padding:15px;
+    }
+
+    .pdf-preview{
+        height:240px;
     }
 }
 
@@ -1213,6 +1310,7 @@ footer{
 <!-- SCROLL PROGRESS -->
 <div id="progress"></div>
 
+
 <!-- =======================================================
      NAVIGATION
 ======================================================= -->
@@ -1222,7 +1320,7 @@ footer{
 <div class="container navbar">
 
 <a href="#home" class="logo">
-    [ESWAR<span>KUMAR</span>]
+    ESWAR<span> KUMAR</span>
 </a>
 
 <nav class="nav-links" id="navLinks">
@@ -1308,7 +1406,6 @@ Power BI, SQL, Excel, Python and automation tools.
     <i class="fa-solid fa-bolt"></i>
 </div>
 
-
 <div class="dashboard">
 
 <div class="dashboard-top">
@@ -1322,7 +1419,6 @@ Power BI, SQL, Excel, Python and automation tools.
 </div>
 
 </div>
-
 
 <div class="kpi-grid">
 
@@ -1345,7 +1441,6 @@ Power BI, SQL, Excel, Python and automation tools.
 </div>
 
 </div>
-
 
 <div class="chart">
 
@@ -1415,7 +1510,6 @@ solutions for business teams.
 
 </div>
 
-
 <div class="about-cards">
 
 <div class="info-card reveal delay-1">
@@ -1470,7 +1564,6 @@ Custom data solutions designed to turn business information
 into clear reports, dashboards and actionable insights.
 </p>
 
-
 <div class="services-grid">
 
 <div class="service-card reveal">
@@ -1483,7 +1576,6 @@ Interactive dashboards, KPI reporting and business intelligence solutions.
 </p>
 </div>
 
-
 <div class="service-card reveal delay-1">
 <div class="service-icon">
 <i class="fa-solid fa-file-excel"></i>
@@ -1493,7 +1585,6 @@ Interactive dashboards, KPI reporting and business intelligence solutions.
 Dynamic Excel dashboards, reporting templates and data analysis.
 </p>
 </div>
-
 
 <div class="service-card reveal delay-2">
 <div class="service-icon">
@@ -1505,7 +1596,6 @@ Data extraction, transformation, querying and analytical reporting.
 </p>
 </div>
 
-
 <div class="service-card reveal">
 <div class="service-icon">
 <i class="fa-brands fa-python"></i>
@@ -1516,7 +1606,6 @@ Automate repetitive data extraction, processing and reporting tasks.
 </p>
 </div>
 
-
 <div class="service-card reveal delay-1">
 <div class="service-icon">
 <i class="fa-solid fa-table"></i>
@@ -1526,7 +1615,6 @@ Automate repetitive data extraction, processing and reporting tasks.
 Automated workflows, reporting systems and spreadsheet solutions.
 </p>
 </div>
-
 
 <div class="service-card reveal delay-2">
 <div class="service-icon">
@@ -1598,14 +1686,17 @@ Automation
 
 <div class="projects-grid" id="projectGrid">
 
-<!-- PROJECT 1 -->
+
+<!-- =====================================================
+     PROJECT 1
+===================================================== -->
 
 <div class="project-card reveal"
 data-category="Power BI">
 
 <div class="project-image">
 
-<i class="fa-solid fa-chart-column"></i>
+<i class="fa-solid fa-chart-column project-icon"></i>
 
 <div class="project-overlay">
 <a href="#" class="view-project">
@@ -1640,14 +1731,16 @@ Interactive dashboard for monitoring sales KPIs and business performance.
 </div>
 
 
-<!-- PROJECT 2 -->
+<!-- =====================================================
+     PROJECT 2
+===================================================== -->
 
 <div class="project-card reveal delay-1"
 data-category="Excel">
 
 <div class="project-image">
 
-<i class="fa-solid fa-file-excel"></i>
+<i class="fa-solid fa-file-excel project-icon"></i>
 
 <div class="project-overlay">
 <a href="#" class="view-project">
@@ -1681,19 +1774,38 @@ Interactive Excel reporting solution with KPI tracking and automated calculation
 </div>
 
 
-<!-- PROJECT 3 -->
+<!-- =====================================================
+     PROJECT 3 — PDF PROJECT
+===================================================== -->
 
 <div class="project-card reveal delay-2"
 data-category="SQL">
 
-<div class="project-image">
+<div class="pdf-preview">
 
-<i class="fa-solid fa-database"></i>
+<div class="pdf-badge">
+    <i class="fa-solid fa-file-pdf"></i>
+    PDF PROJECT
+</div>
 
-<div class="project-overlay">
-<a href="#" class="view-project">
-View Project →
+<iframe
+    src="Queries.pdf#page=1&view=FitH"
+    title="SQL Queries PDF Preview">
+</iframe>
+
+<div class="pdf-overlay">
+
+<a
+    href="Queries.pdf"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="pdf-view-btn">
+
+    <i class="fa-solid fa-file-pdf"></i>
+    View Full PDF
+
 </a>
+
 </div>
 
 </div>
@@ -1705,16 +1817,19 @@ SQL
 </div>
 
 <h3>
-Business Data Analysis
+SQL Queries & Data Analysis
 </h3>
 
 <p>
-Structured SQL analysis for extracting business insights from operational data.
+Collection of SQL queries demonstrating data extraction,
+analysis and business-oriented problem solving.
 </p>
 
 <div class="tech-tags">
 <span class="tech">SQL</span>
-<span class="tech">Power BI</span>
+<span class="tech">Queries</span>
+<span class="tech">Data Analysis</span>
+<span class="tech">PDF</span>
 </div>
 
 </div>
@@ -1722,14 +1837,16 @@ Structured SQL analysis for extracting business insights from operational data.
 </div>
 
 
-<!-- PROJECT 4 -->
+<!-- =====================================================
+     PROJECT 4
+===================================================== -->
 
 <div class="project-card reveal"
 data-category="Python">
 
 <div class="project-image">
 
-<i class="fa-brands fa-python"></i>
+<i class="fa-brands fa-python project-icon"></i>
 
 <div class="project-overlay">
 <a href="#" class="view-project">
@@ -1763,14 +1880,16 @@ Python-based workflow for automating repetitive data processing tasks.
 </div>
 
 
-<!-- PROJECT 5 -->
+<!-- =====================================================
+     PROJECT 5
+===================================================== -->
 
 <div class="project-card reveal delay-1"
 data-category="Automation">
 
 <div class="project-image">
 
-<i class="fa-solid fa-gears"></i>
+<i class="fa-solid fa-gears project-icon"></i>
 
 <div class="project-overlay">
 <a href="#" class="view-project">
@@ -1804,14 +1923,16 @@ Automated reporting workflow for collecting and distributing KPI information.
 </div>
 
 
-<!-- PROJECT 6 -->
+<!-- =====================================================
+     PROJECT 6
+===================================================== -->
 
 <div class="project-card reveal delay-2"
 data-category="Power BI">
 
 <div class="project-image">
 
-<i class="fa-solid fa-chart-pie"></i>
+<i class="fa-solid fa-chart-pie project-icon"></i>
 
 <div class="project-overlay">
 <a href="#" class="view-project">
@@ -1844,6 +1965,7 @@ KPI-focused dashboard for monitoring operational performance.
 
 </div>
 
+
 </div>
 
 </div>
@@ -1871,7 +1993,6 @@ KPI-focused dashboard for monitoring operational performance.
 Technologies I use to transform raw data into meaningful
 business information.
 </p>
-
 
 <div class="skill-groups">
 
@@ -2085,15 +2206,22 @@ reports and useful business insights.
 
 <div class="hero-buttons" style="justify-content:center;">
 
-<a href="mailto:[YOUR EMAIL]" class="btn btn-primary">
+<a href="mailto:u202507eswar@gmail.com"
+class="btn btn-primary">
+
 <i class="fa-solid fa-envelope"></i>
 Email Me
+
 </a>
 
-<a href="[YOUR LINKEDIN]" target="_blank" class="btn btn-secondary"
+<a href="https://www.linkedin.com/in/eswar-kumar-j-689b27253/"
+target="_blank"
+class="btn btn-secondary"
 style="border-color:white;color:white;">
+
 <i class="fa-brands fa-linkedin"></i>
 LinkedIn
+
 </a>
 
 </div>
@@ -2116,7 +2244,7 @@ LinkedIn
 <div class="footer-brand">
 
 <div class="logo">
-[YOUR<span>NAME</span>]
+ESWAR<span> KUMAR</span>
 </div>
 
 <p>
@@ -2126,20 +2254,36 @@ automation, reporting and business intelligence.
 
 <div class="socials" style="margin-top:20px;">
 
-<a href="[YOUR LINKEDIN]" class="social" target="_blank">
+<a
+href="https://www.linkedin.com/in/eswar-kumar-j-689b27253/"
+class="social"
+target="_blank"
+rel="noopener noreferrer">
+
 <i class="fa-brands fa-linkedin-in"></i>
+
 </a>
 
-<a href="[YOUR GITHUB]" class="social" target="_blank">
+<a href="#" class="social">
 <i class="fa-brands fa-github"></i>
 </a>
 
-<a href="mailto:[YOUR EMAIL]" class="social">
+<a
+href="mailto:u202507eswar@gmail.com"
+class="social">
+
 <i class="fa-solid fa-envelope"></i>
+
 </a>
 
-<a href="https://wa.me/[YOUR NUMBER]" class="social" target="_blank">
+<a
+href="https://wa.me/9442603691"
+class="social"
+target="_blank"
+rel="noopener noreferrer">
+
 <i class="fa-brands fa-whatsapp"></i>
+
 </a>
 
 </div>
@@ -2191,7 +2335,7 @@ Technologies
 
 <div class="copyright">
 
-© <span id="year"></span> [YOUR NAME].
+© <span id="year"></span> ESWAR KUMAR.
 All rights reserved.
 
 </div>
@@ -2201,7 +2345,9 @@ All rights reserved.
 </footer>
 
 
-<!-- SCROLL TOP -->
+<!-- =======================================================
+     SCROLL TOP
+======================================================= -->
 
 <button id="topBtn">
 <i class="fa-solid fa-arrow-up"></i>
@@ -2228,11 +2374,15 @@ menuBtn.addEventListener("click", () => {
     const icon = menuBtn.querySelector("i");
 
     if(navLinks.classList.contains("open")){
+
         icon.classList.remove("fa-bars");
         icon.classList.add("fa-xmark");
+
     }else{
+
         icon.classList.remove("fa-xmark");
         icon.classList.add("fa-bars");
+
     }
 
 });
@@ -2265,9 +2415,13 @@ const header = document.getElementById("header");
 window.addEventListener("scroll", () => {
 
     if(window.scrollY > 40){
+
         header.classList.add("scrolled");
+
     }else{
+
         header.classList.remove("scrolled");
+
     }
 
 });
@@ -2364,14 +2518,16 @@ filters.forEach(filter => {
                 setTimeout(() => {
 
                     project.style.opacity = "1";
-                    project.style.transform = "translateY(0)";
+                    project.style.transform =
+                        "translateY(0)";
 
                 },20);
 
             }else{
 
                 project.style.opacity = "0";
-                project.style.transform = "translateY(15px)";
+                project.style.transform =
+                    "translateY(15px)";
 
                 setTimeout(() => {
 
@@ -2413,8 +2569,10 @@ window.addEventListener("scroll", () => {
 topBtn.addEventListener("click", () => {
 
     window.scrollTo({
+
         top:0,
         behavior:"smooth"
+
     });
 
 });
@@ -2474,9 +2632,7 @@ window.addEventListener("scroll", () => {
 
 });
 
-
 </script>
 
 </body>
 </html>
-```
